@@ -1,0 +1,67 @@
+class Employee{
+    String Emp_name,Address,Mail;
+    float Emp_id,mobile_no;
+    int basicpay,da,hra,pf,clubfund;
+    void salary(){
+        da=basicpay * 97/100;
+        hra=basicpay * 10/100;
+        pf=basicpay * 12/100;
+        clubfund=basicpay * 1/1000;
+        int gross_sal=basicpay+da+hra;
+        int net_sal=gross_sal-pf-clubfund;
+        System.out.println("Name: "+Emp_name);
+        System.out.println("Address: "+Address);
+        System.out.println("Mail: "+Mail);
+        System.out.println("Gross sal: "+gross_sal);
+        System.out.println("Net sal: "+net_sal);
+    }
+}
+class Programmer extends Employee{
+      Programmer(String name,int basic,String address,String mail){
+          this.basicpay=basic;
+          this.Emp_name=name;
+          this.Address=address;
+          this.Mail=mail;
+      }
+}
+class TeamLead extends Employee{
+    TeamLead(String name,int basic,String address,String mail){
+        this.basicpay=basic;
+        this.Emp_name=name;
+        this.Address=address;
+        this.Mail=mail;
+    }
+
+}
+class AssiPM extends Employee{
+    AssiPM(String name,int basic,String address,String mail){
+        this.basicpay=basic;
+        this.Emp_name=name;
+        this.Address=address;
+        this.Mail=mail;
+    }
+
+}
+class ProjectManager extends Employee{
+    ProjectManager(String name,int basic,String address,String mail){
+        this.basicpay=basic;
+        this.Emp_name=name;
+        this.Address=address;
+        this.Mail=mail;
+    }
+
+}
+public class Main {
+    public static void main(String[] args) {
+     Programmer p=new Programmer("Akshay",40000,"kolhapur","ramshinde@mail.com");
+     p.salary();
+        System.out.println("");
+        System.out.println("--*****------------");
+     TeamLead t=new TeamLead("Rahul",70000,"Solapur","rahul@12gmail.com");
+     t.salary();
+        System.out.println("");
+        System.out.println("--*****------------");
+     AssiPM ASM=new AssiPM("Virendra",100000,"Pune","Virendra@20gmail.com");
+     ASM.salary();
+    }
+}
