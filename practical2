@@ -5,16 +5,26 @@ class Publication{
     int price;
     int copies;
     void saleCopy(){
-        System.out.println("total sale is "+(price * copies));
     }
 }
-class Book extends Publication{
+class Book{
+    String title;
+    int price;
+    int copies;
    String author;
+   void saleCopy(){
+    System.out.println("total sale is "+(price * copies));
+    }
    void ordercopies(){
 
    }
 }
-class Magazine extends Publication{
+class Magazine{
+    String title;
+    int price;
+    int copies;
+    void saleCopy(){
+    }
     void orderQuantity(){}
     void Currentissue(){
     }
