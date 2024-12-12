@@ -1,0 +1,40 @@
+import java.sql.SQLOutput;
+import java.util.Scanner;
+class Publication{
+    String title;
+    int price;
+    int copies;
+    void saleCopy(){
+        System.out.println("total sale is "+(price * copies));
+    }
+}
+class Book extends Publication{
+   String author;
+   void ordercopies(){
+
+   }
+}
+class Magazine extends Publication{
+    void orderQuantity(){}
+    void Currentissue(){
+    }
+    void  receiveissue(){
+    }
+}
+public class Main{
+    public static void main(String[] args) {
+        Book book1 = new Book();
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the name of author ");
+        String author=sc.nextLine();
+        book1.author=author;
+        System.out.println("Enter the price of book ");
+        int price= sc.nextInt();
+        book1.price=price;
+        System.out.println("Enter the copie of book ");
+        int copies=sc.nextInt();
+        book1.copies=copies;
+        book1.saleCopy();
+        sc.close();
+    }
+}
