@@ -32,20 +32,25 @@ public class Dynamic {
         Shape S;
         Triangle T = new Triangle();
         Rectangle R = new Rectangle();
-        System.out.println("Enter the choise \n 1.Triangle \n 2.Rectangle \n 3.Exit ");
-        int Choise = sc.nextInt();
-        if (Choise == 1) {
-            S = T;
-            S.input();
-            S.Compute_area();
-        }
-        if (Choise == 2) {
-            S = R;
-            S.input();
-            S.Compute_area();
-            if(Choise==3){
-                sc.close();
+        for (int i = 0; ; i++) {
+            System.out.println("Enter the choise \n 1.Triangle \n 2.Rectangle \n 3.Exit ");
+            int Choise = sc.nextInt();
+            switch (Choise) {
+                case 1:
+                    S = T;
+                    S.input();
+                    S.Compute_area();
+                    break;
+                case 2:
+                    S = R;
+                    S.input();
+                    S.Compute_area();
+                    break;
+                case 3:
+                    sc.close();
+                    System.exit(0);
+                    break;
             }
         }
     }
-}
+ }
