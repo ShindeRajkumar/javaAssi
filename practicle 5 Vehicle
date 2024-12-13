@@ -1,0 +1,84 @@
+import com.sun.source.tree.CaseTree;
+
+import java.util.Scanner;
+
+interface Vehicle{
+    void gearchange();
+    void speedup();
+    void applybreak();
+}
+class Car implements Vehicle{
+    Scanner sc=new Scanner(System.in);
+    int gear=0;
+    int speed=0;
+    int increment=5;
+    int maxspeed=50;
+   public void gearchange() {
+       System.out.println("Enter the Gear from (1-3)");
+       gear = sc.nextInt();
+       if (gear > 0 && gear <= 3) {
+           switch (gear) {
+               case 1:
+                   speed = 10;
+                   break;
+               case 2:
+                   speed = 20;
+                   break;
+               case 3:
+                   speed = 30;
+                   break;
+               default:
+                   System.out.println("Envalid input:");
+           }
+           System.out.println("the gear is changed to: "+gear);
+           System.out.println("speed of car is: "+speed);
+       }
+   }
+   public void speedup(){
+       speed+=increment;
+       if(speed>=maxspeed){
+           System.out.println("speed is maximum: "+speed+"change the gear");
+       }
+       else{
+           System.out.println("now the speed of car is: "+speed);
+       }
+
+
+   }
+   public  void applybreak(){}
+}
+ class Bike implements Vehicle{
+    public void gearchange(){}
+    public  void speedup(){}
+    public  void applybreak(){}
+}
+class Bicycle implements Vehicle{
+    public void gearchange(){}
+    public  void speedup(){}
+    public  void applybreak(){}
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        Vehicle v = null;
+        System.out.println("Enter the vehicle type:\n 1.car \n 2.bicycle \n 3. bike");
+         int vehicletype;
+         vehicletype= sc.nextInt();
+        switch (vehicletype) {
+            case 1:
+                v = new Car();
+                break;
+            case 2:
+                v=new Bicycle();
+                break;
+            case 3:
+                v=new Bike();
+                break;
+            default:
+                System.out.println("Envalid vehicle type");
+        }
+        v.gearchange();
+        v.speedup();
+        v.applybreak();
+    }
+}
