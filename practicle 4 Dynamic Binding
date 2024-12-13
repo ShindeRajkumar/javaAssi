@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+abstract class Shape{
+    double num1;
+    double num2;
+    void input(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the First number: ");
+        num1= sc.nextDouble();
+        System.out.println("Enter the second number: ");
+        num2= sc.nextDouble();
+    }
+    abstract void Compute_area();
+}
+class Triangle extends Shape{
+    void Compute_area(){
+        double area;
+        area=0.5*num1*num2;
+        System.out.println("Area of triangle is: "+area);
+    }
+}
+class Rectangle extends Shape {
+    void Compute_area(){
+        double area;
+        area=num1*num2;
+        System.out.println("Area of rectangke is: "+area);
+    }
+}
+public class Dynamic {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Shape S;
+        Triangle T = new Triangle();
+        Rectangle R = new Rectangle();
+        System.out.println("Enter the choise \n 1.Triangle \n 2.Rectangle \n 3.Exit ");
+        int Choise = sc.nextInt();
+        if (Choise == 1) {
+            S = T;
+            S.input();
+            S.Compute_area();
+        }
+        if (Choise == 2) {
+            S = R;
+            S.input();
+            S.Compute_area();
+            if(Choise==3){
+                sc.close();
+            }
+        }
+    }
+}
